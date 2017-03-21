@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		  <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="maps.css" rel="stylesheet">
+
+    <script src="bmi_calculator.js"></script>
+     
+	</head>
+<body>
+
+<div id="main">
+	<form id="bmi_form" class="bmi">
+			<div class="form-group row">
+			  	<label class="col-md-2 col-form-label">Weight</label>
+				  	<div class="col-md-4">
+				    	<input class="form-control" type="number" value="0" min="100" id="weight">
+			  		</div>
+		  		<label class="col-md-1 col-form-label">Lbs</label>
+
+			</div>
+			<div class="form-group row">
+			  		<label class="col-md-2 col-form-label">Height</label>
+			  	<div class="col-md-4">
+			    	<input class="form-control" type="number" value="0" min="4" max="7" id="height_ft">
+			  	</div>
+			  	<label class="col-md-1 col-form-label">Ft.</label>
+			  	<div class="col-md-4">
+			    	<input class="form-control" type="number" value="0" min="1" max="11" id="height_in">
+			  	</div>
+			  	<label class="col-md-1 col-form-label">In.</label>
+			</div>
+			<div style="padding-top:2%" >	
+				<button type="button" style="font-size:15px" class="btn btn-success btn-block" onclick="calculate_bmi()">Calculate</button>
+			</div>	
+	</form>
+
+	<form id="bmi_form_result" class="bmi" style="display:none">
+		<div class="form-group row">
+			<label class="col-md-4 col-form-label">Your BMI is :</label>
+			<label class="col-md-2 col-form-label" id="result_bmi">0</label>
+		</div>
+		<div style="padding-top:2%" >	
+				<button type="button" style="font-size:15px" class="btn btn-success btn-block" onclick="reset_form(); return false;">Go Back</button>
+		</div>
+	</form>
+
+		<form id="bmi_form_replace" class="bmi" style="display:none">
+			<div class="form-group row">
+			  	<label class="col-md-2 col-form-label">Weight</label>
+				  	<div class="col-md-4">
+				    	<input class="form-control" type="number" value="0" id="weight">
+			  		</div>
+		  		<label class="col-md-1 col-form-label">Lbs</label>
+
+			</div>
+			<div class="form-group row">
+			  		<label class="col-md-2 col-form-label">Height</label>
+			  	<div class="col-md-4">
+			    	<input class="form-control" type="number" value="0" id="height_ft">
+			  	</div>
+			  	<label class="col-md-1 col-form-label">Ft.</label>
+			  	<div class="col-md-4">
+			    	<input class="form-control" type="number" value="0" id="height_in">
+			  	</div>
+			  	<label class="col-md-1 col-form-label">In.</label>
+			</div>
+			<div style="padding-top:2%" >	
+				<button type="button" style="font-size:15px" class="btn btn-success btn-block" onclick="calculate_bmi()">Calculate</button>
+			</div>	
+	</form>
+
+</div>
+
+
+
+<table class="health_info">
+<tbody>
+	<th colspan="4">
+		<h1>Health Information</h1>
+	</th>
+	<tr>
+	  <td><label>Gender</label></td>
+      <td><label class="radio-inline">
+      <input type="radio" name="sex"> Male</label></td>
+      <td><label class="radio-inline">
+      <input type="radio" name="sex"> Female</label></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><label>Member ID</label></td>
+      <td><input class="form-control" type="number" id="member_id"></td>
+      <td><label>BMI</label></td>
+      <td><input class="form-control" type="number" value="0" id="bmi"></td>
+    </tr>
+    <tr>
+      <td><label>Weight</label></td>
+      <td><input class="form-control" type="number" value="0" id="weight"></td>
+      <td><label>Diet Type</label></td>
+      <td>
+      	<select class="form-control" id="diet_type">
+      		<option>Light</option>
+      		<option>Medium</option>
+      		<option>Normal</option>
+      		<option>Heavy</option>
+      	</select>
+	  </td>
+   	</tr>
+    <tr>
+      <td><label>Height Ft</label></td>
+      <td><input class="form-control" type="number" value="0" min="4" max="7"  id="height_ft"></td>
+      <td><label>Height In</label></td>
+      <td><input class="form-control" type="number" value="0" min="1" max="11" id="height_ft"></td>
+    </tr>
+    <tr>
+      <td><label>Previous Disease</label></td>
+      <td><input class="form-control" type="text" id="prev_disease"></td>
+      <td><label>Current Disease</label></td>
+      <td><input class="form-control" type="text" id="cur_disease"></td>
+    </tr>
+    <tr>
+		<td colspan="4">
+			<button type="button" style="font-size:15px" class="btn btn-success btn-block">Submit</button>
+		</td>
+    </tr>
+ </tbody>
+ </table> 
+
+</body>
+</html>
